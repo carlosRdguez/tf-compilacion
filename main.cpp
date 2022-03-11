@@ -1,53 +1,22 @@
-#include <bits/stdc++.h>
-#include "lex.yy.c"
-
+#include <iostream>
+#include "Scanner.h"
 using namespace std;
-
-/*!
-    yyin => archivo de codigo fuente para analisis lexicografico
-    yylex() => funcion para adquirir token
-    yytext => texto del token
-    yyleng => tamaño del token
-*/
-
-
 
 int main()
 {
-    map <int, string> m;
-    m[LT]="LT";
-    m[LE]="LE";
-    m[EQ]="EQ";
-    m[NE]="NE";
-    m[GT]="GT";
-    m[GE]="GE";
-    m[IF]="IF";
-    m[THEN]="THEN";
-    m[ELSE]="ELSE";
-    m[ID]="ID";
-    m[RES]="RES";
-    m[NUMBER]="NUMBER";
-    m[RELOP]="RELOP";
-    m[COMA] = "COMA";
-    m[PUNTO] = "PUNTO";
-    m[DOSPUNTOS]
-    m[PUNTOYCOMA]="PUNTOYCOMA";
-    m[PESO]="PESO";
-
-    yyin = fopen("test_program.pas", "r" );
-
-    int token;
+    Scanner scanner("test_program.pas");
+    string nextToken = scanner.getNextToken();
+    cout << scanner.getCurrentLine() << " ";
     do {
-        token = yylex();
-
-        if (token == RELOP) {
-          cout << "$$$<" << m[yylval] << ">$$$\n";
+        if(nextToken != "\n") {
+            cout << nextToken << " ";
         }
         else {
-            cout << "&&&<" << yytext << " " << m[token] << ">&&&\n";
+            cout << "\n" << scanner.getCurrentLine() << " ";
         }
+        nextToken = scanner.getNextToken();
+    }while(nextToken != "$");
 
-    } while (token != PESO);
 
     return 0;
 }
