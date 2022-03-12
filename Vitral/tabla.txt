@@ -48,16 +48,16 @@ goto[Q7, instruccion_ciclo] = 19
 goto[Q7, instruccion_entrada] = 20
 goto[Q7, instruccion_salida] = 21
 goto[Q7, expresion_aritmetica] = 22
-goto[Q7, termino] = 23
-goto[Q7, factor] = 24
-goto[Q7, instruccion_condicional_simple] = 25
+goto[Q7, instruccion_condicional_simple] = 23
+goto[Q7, termino] = 24
+goto[Q7, factor] = 25
 
 
 action[Q8, pr_begin] = R2
 
 
 action[Q9, identificador] = S11
-action[Q9, pr_begin] = R12
+action[Q9, pr_begin] = R9
 goto[Q9, lista_declaracion_de_tipos] = 36
 goto[Q9, declaracion_de_tipo] = 9
 goto[Q9, lista_de_identificadores] = 10
@@ -66,7 +66,7 @@ goto[Q9, lista_de_identificadores] = 10
 action[Q10, dos_puntos] = S37
 
 
-action[Q11, dos_puntos] = R15
+action[Q11, dos_puntos] = R23
 action[Q11, coma] = S38
 
 
@@ -99,147 +99,147 @@ goto[Q15, instruccion_ciclo] = 19
 goto[Q15, instruccion_entrada] = 20
 goto[Q15, instruccion_salida] = 21
 goto[Q15, expresion_aritmetica] = 22
-goto[Q15, termino] = 23
-goto[Q15, factor] = 24
-goto[Q15, instruccion_condicional_simple] = 25
+goto[Q15, instruccion_condicional_simple] = 23
+goto[Q15, termino] = 24
+goto[Q15, factor] = 25
 
 
-action[Q16, parentesis_abierto] = R17
-action[Q16, literal_entera] = R17
-action[Q16, identificador] = R17
-action[Q16, pr_if] = R17
-action[Q16, literal_cadena] = R17
-action[Q16, literal_caracter] = R17
-action[Q16, pr_end] = R17
-action[Q16, pr_for] = R17
-action[Q16, instruccion_read] = R17
-action[Q16, literal_booleana] = R17
-action[Q16, instruccion_write] = R17
+action[Q16, parentesis_abierto] = R11
+action[Q16, literal_entera] = R11
+action[Q16, identificador] = R11
+action[Q16, pr_if] = R11
+action[Q16, literal_cadena] = R11
+action[Q16, literal_caracter] = R11
+action[Q16, pr_end] = R11
+action[Q16, pr_for] = R11
+action[Q16, instruccion_read] = R11
+action[Q16, literal_booleana] = R11
+action[Q16, instruccion_write] = R11
 
 
-action[Q17, parentesis_abierto] = R18
-action[Q17, literal_entera] = R18
-action[Q17, identificador] = R18
-action[Q17, pr_if] = R18
-action[Q17, literal_cadena] = R18
-action[Q17, literal_caracter] = R18
-action[Q17, pr_end] = R18
-action[Q17, pr_for] = R18
-action[Q17, instruccion_read] = R18
-action[Q17, literal_booleana] = R18
-action[Q17, instruccion_write] = R18
+action[Q17, parentesis_abierto] = R16
+action[Q17, literal_entera] = R16
+action[Q17, identificador] = R16
+action[Q17, pr_if] = R16
+action[Q17, literal_cadena] = R16
+action[Q17, literal_caracter] = R16
+action[Q17, pr_end] = R16
+action[Q17, pr_for] = R16
+action[Q17, instruccion_read] = R16
+action[Q17, literal_booleana] = R16
+action[Q17, instruccion_write] = R16
 
 
-action[Q18, parentesis_abierto] = R19
-action[Q18, literal_entera] = R19
-action[Q18, identificador] = R19
-action[Q18, pr_if] = R19
-action[Q18, literal_cadena] = R19
-action[Q18, literal_caracter] = R19
-action[Q18, pr_end] = R19
-action[Q18, pr_for] = R19
-action[Q18, instruccion_read] = R19
-action[Q18, literal_booleana] = R19
-action[Q18, instruccion_write] = R19
+action[Q18, parentesis_abierto] = R17
+action[Q18, literal_entera] = R17
+action[Q18, identificador] = R17
+action[Q18, pr_if] = R17
+action[Q18, literal_cadena] = R17
+action[Q18, literal_caracter] = R17
+action[Q18, pr_end] = R17
+action[Q18, pr_for] = R17
+action[Q18, instruccion_read] = R17
+action[Q18, literal_booleana] = R17
+action[Q18, instruccion_write] = R17
 
 
-action[Q19, parentesis_abierto] = R20
-action[Q19, literal_entera] = R20
-action[Q19, identificador] = R20
-action[Q19, pr_if] = R20
-action[Q19, literal_cadena] = R20
-action[Q19, literal_caracter] = R20
-action[Q19, pr_end] = R20
-action[Q19, pr_for] = R20
-action[Q19, instruccion_read] = R20
-action[Q19, literal_booleana] = R20
-action[Q19, instruccion_write] = R20
+action[Q19, parentesis_abierto] = R18
+action[Q19, literal_entera] = R18
+action[Q19, identificador] = R18
+action[Q19, pr_if] = R18
+action[Q19, literal_cadena] = R18
+action[Q19, literal_caracter] = R18
+action[Q19, pr_end] = R18
+action[Q19, pr_for] = R18
+action[Q19, instruccion_read] = R18
+action[Q19, literal_booleana] = R18
+action[Q19, instruccion_write] = R18
 
 
-action[Q20, parentesis_abierto] = R21
-action[Q20, literal_entera] = R21
-action[Q20, identificador] = R21
-action[Q20, pr_if] = R21
-action[Q20, literal_cadena] = R21
-action[Q20, literal_caracter] = R21
-action[Q20, pr_end] = R21
-action[Q20, pr_for] = R21
-action[Q20, instruccion_read] = R21
-action[Q20, literal_booleana] = R21
-action[Q20, instruccion_write] = R21
+action[Q20, parentesis_abierto] = R19
+action[Q20, literal_entera] = R19
+action[Q20, identificador] = R19
+action[Q20, pr_if] = R19
+action[Q20, literal_cadena] = R19
+action[Q20, literal_caracter] = R19
+action[Q20, pr_end] = R19
+action[Q20, pr_for] = R19
+action[Q20, instruccion_read] = R19
+action[Q20, literal_booleana] = R19
+action[Q20, instruccion_write] = R19
 
 
-action[Q21, parentesis_abierto] = R22
-action[Q21, literal_entera] = R22
-action[Q21, identificador] = R22
-action[Q21, pr_if] = R22
-action[Q21, literal_cadena] = R22
-action[Q21, literal_caracter] = R22
-action[Q21, pr_end] = R22
-action[Q21, pr_for] = R22
-action[Q21, instruccion_read] = R22
-action[Q21, literal_booleana] = R22
-action[Q21, instruccion_write] = R22
+action[Q21, parentesis_abierto] = R20
+action[Q21, literal_entera] = R20
+action[Q21, identificador] = R20
+action[Q21, pr_if] = R20
+action[Q21, literal_cadena] = R20
+action[Q21, literal_caracter] = R20
+action[Q21, pr_end] = R20
+action[Q21, pr_for] = R20
+action[Q21, instruccion_read] = R20
+action[Q21, literal_booleana] = R20
+action[Q21, instruccion_write] = R20
 
 
-action[Q22, parentesis_abierto] = R23
-action[Q22, literal_entera] = R23
-action[Q22, identificador] = R23
-action[Q22, pr_if] = R23
-action[Q22, literal_cadena] = R23
-action[Q22, literal_caracter] = R23
-action[Q22, pr_end] = R23
-action[Q22, pr_for] = R23
-action[Q22, instruccion_read] = R23
-action[Q22, literal_booleana] = R23
-action[Q22, instruccion_write] = R23
+action[Q22, parentesis_abierto] = R21
+action[Q22, literal_entera] = R21
+action[Q22, identificador] = R21
+action[Q22, pr_if] = R21
+action[Q22, literal_cadena] = R21
+action[Q22, literal_caracter] = R21
+action[Q22, pr_end] = R21
+action[Q22, pr_for] = R21
+action[Q22, instruccion_read] = R21
+action[Q22, literal_booleana] = R21
+action[Q22, instruccion_write] = R21
 
 
-action[Q23, operador_suma] = S45
-action[Q23, operador_resta] = S46
-action[Q23, parentesis_abierto] = R32
-action[Q23, literal_entera] = R32
-action[Q23, identificador] = R32
-action[Q23, pr_if] = R32
-action[Q23, literal_cadena] = R32
-action[Q23, literal_caracter] = R32
-action[Q23, pr_end] = R32
-action[Q23, pr_for] = R32
-action[Q23, instruccion_read] = R32
-action[Q23, literal_booleana] = R32
-action[Q23, instruccion_write] = R32
+action[Q23, parentesis_abierto] = R25
+action[Q23, literal_entera] = R25
+action[Q23, identificador] = R25
+action[Q23, pr_if] = R25
+action[Q23, literal_cadena] = R25
+action[Q23, literal_caracter] = R25
+action[Q23, pr_end] = R25
+action[Q23, pr_for] = R25
+action[Q23, instruccion_read] = R25
+action[Q23, pr_else] = S46
+action[Q23, literal_booleana] = R25
+action[Q23, instruccion_write] = R25
+goto[Q23, instruccion_condicional_else] = 45
 
 
-action[Q24, operador_suma] = R44
-action[Q24, operador_resta] = R44
-action[Q24, operador_multiplicacion] = S47
-action[Q24, operador_division] = S48
-action[Q24, parentesis_abierto] = R44
-action[Q24, literal_entera] = R44
-action[Q24, identificador] = R44
-action[Q24, pr_if] = R44
-action[Q24, literal_cadena] = R44
-action[Q24, literal_caracter] = R44
-action[Q24, pr_end] = R44
-action[Q24, pr_for] = R44
-action[Q24, instruccion_read] = R44
-action[Q24, literal_booleana] = R44
-action[Q24, instruccion_write] = R44
+action[Q24, operador_suma] = S47
+action[Q24, operador_resta] = S48
+action[Q24, parentesis_abierto] = R32
+action[Q24, literal_entera] = R32
+action[Q24, identificador] = R32
+action[Q24, pr_if] = R32
+action[Q24, literal_cadena] = R32
+action[Q24, literal_caracter] = R32
+action[Q24, pr_end] = R32
+action[Q24, pr_for] = R32
+action[Q24, instruccion_read] = R32
+action[Q24, literal_booleana] = R32
+action[Q24, instruccion_write] = R32
 
 
-action[Q25, parentesis_abierto] = R25
-action[Q25, literal_entera] = R25
-action[Q25, identificador] = R25
-action[Q25, pr_if] = R25
-action[Q25, literal_cadena] = R25
-action[Q25, literal_caracter] = R25
-action[Q25, pr_end] = R25
-action[Q25, pr_for] = R25
-action[Q25, instruccion_read] = R25
-action[Q25, pr_else] = S50
-action[Q25, literal_booleana] = R25
-action[Q25, instruccion_write] = R25
-goto[Q25, instruccion_condicional_else] = 49
+action[Q25, operador_suma] = R46
+action[Q25, operador_resta] = R46
+action[Q25, operador_multiplicacion] = S49
+action[Q25, operador_division] = S50
+action[Q25, parentesis_abierto] = R46
+action[Q25, literal_entera] = R46
+action[Q25, identificador] = R46
+action[Q25, pr_if] = R46
+action[Q25, literal_cadena] = R46
+action[Q25, literal_caracter] = R46
+action[Q25, pr_end] = R46
+action[Q25, pr_for] = R46
+action[Q25, instruccion_read] = R46
+action[Q25, literal_booleana] = R46
+action[Q25, instruccion_write] = R46
 
 
 action[Q26, parentesis_abierto] = S54
@@ -253,77 +253,77 @@ goto[Q26, termino] = 52
 goto[Q26, factor] = 53
 
 
-action[Q27, operador_suma] = R46
-action[Q27, operador_resta] = R46
-action[Q27, operador_multiplicacion] = R46
-action[Q27, operador_division] = R46
-action[Q27, parentesis_abierto] = R46
-action[Q27, literal_entera] = R46
-action[Q27, identificador] = R46
-action[Q27, pr_if] = R46
-action[Q27, literal_cadena] = R46
-action[Q27, literal_caracter] = R46
-action[Q27, pr_end] = R46
-action[Q27, pr_for] = R46
-action[Q27, instruccion_read] = R46
-action[Q27, literal_booleana] = R46
-action[Q27, instruccion_write] = R46
+action[Q27, operador_suma] = R51
+action[Q27, operador_resta] = R51
+action[Q27, operador_multiplicacion] = R51
+action[Q27, operador_division] = R51
+action[Q27, parentesis_abierto] = R51
+action[Q27, literal_entera] = R51
+action[Q27, identificador] = R51
+action[Q27, pr_if] = R51
+action[Q27, literal_cadena] = R51
+action[Q27, literal_caracter] = R51
+action[Q27, pr_end] = R51
+action[Q27, pr_for] = R51
+action[Q27, instruccion_read] = R51
+action[Q27, literal_booleana] = R51
+action[Q27, instruccion_write] = R51
 
 
-action[Q28, operador_suma] = R45
-action[Q28, operador_resta] = R45
-action[Q28, operador_multiplicacion] = R45
-action[Q28, operador_division] = R45
-action[Q28, parentesis_abierto] = R45
-action[Q28, literal_entera] = R45
-action[Q28, identificador] = R45
+action[Q28, operador_suma] = R50
+action[Q28, operador_resta] = R50
+action[Q28, operador_multiplicacion] = R50
+action[Q28, operador_division] = R50
+action[Q28, parentesis_abierto] = R50
+action[Q28, literal_entera] = R50
+action[Q28, identificador] = R50
 action[Q28, operador_asignacion] = S60
-action[Q28, pr_if] = R45
-action[Q28, literal_cadena] = R45
-action[Q28, literal_caracter] = R45
-action[Q28, pr_end] = R45
-action[Q28, pr_for] = R45
-action[Q28, instruccion_read] = R45
-action[Q28, literal_booleana] = R45
-action[Q28, instruccion_write] = R45
+action[Q28, pr_if] = R50
+action[Q28, literal_cadena] = R50
+action[Q28, literal_caracter] = R50
+action[Q28, pr_end] = R50
+action[Q28, pr_for] = R50
+action[Q28, instruccion_read] = R50
+action[Q28, literal_booleana] = R50
+action[Q28, instruccion_write] = R50
 
 
 action[Q29, identificador] = S62
 goto[Q29, condicion] = 61
 
 
-action[Q30, operador_suma] = R48
-action[Q30, operador_resta] = R48
-action[Q30, operador_multiplicacion] = R48
-action[Q30, operador_division] = R48
-action[Q30, parentesis_abierto] = R48
-action[Q30, literal_entera] = R48
-action[Q30, identificador] = R48
-action[Q30, pr_if] = R48
-action[Q30, literal_cadena] = R48
-action[Q30, literal_caracter] = R48
-action[Q30, pr_end] = R48
-action[Q30, pr_for] = R48
-action[Q30, instruccion_read] = R48
-action[Q30, literal_booleana] = R48
-action[Q30, instruccion_write] = R48
+action[Q30, operador_suma] = R53
+action[Q30, operador_resta] = R53
+action[Q30, operador_multiplicacion] = R53
+action[Q30, operador_division] = R53
+action[Q30, parentesis_abierto] = R53
+action[Q30, literal_entera] = R53
+action[Q30, identificador] = R53
+action[Q30, pr_if] = R53
+action[Q30, literal_cadena] = R53
+action[Q30, literal_caracter] = R53
+action[Q30, pr_end] = R53
+action[Q30, pr_for] = R53
+action[Q30, instruccion_read] = R53
+action[Q30, literal_booleana] = R53
+action[Q30, instruccion_write] = R53
 
 
-action[Q31, operador_suma] = R49
-action[Q31, operador_resta] = R49
-action[Q31, operador_multiplicacion] = R49
-action[Q31, operador_division] = R49
-action[Q31, parentesis_abierto] = R49
-action[Q31, literal_entera] = R49
-action[Q31, identificador] = R49
-action[Q31, pr_if] = R49
-action[Q31, literal_cadena] = R49
-action[Q31, literal_caracter] = R49
-action[Q31, pr_end] = R49
-action[Q31, pr_for] = R49
-action[Q31, instruccion_read] = R49
-action[Q31, literal_booleana] = R49
-action[Q31, instruccion_write] = R49
+action[Q31, operador_suma] = R54
+action[Q31, operador_resta] = R54
+action[Q31, operador_multiplicacion] = R54
+action[Q31, operador_division] = R54
+action[Q31, parentesis_abierto] = R54
+action[Q31, literal_entera] = R54
+action[Q31, identificador] = R54
+action[Q31, pr_if] = R54
+action[Q31, literal_cadena] = R54
+action[Q31, literal_caracter] = R54
+action[Q31, pr_end] = R54
+action[Q31, pr_for] = R54
+action[Q31, instruccion_read] = R54
+action[Q31, literal_booleana] = R54
+action[Q31, instruccion_write] = R54
 
 
 action[Q32, identificador] = S63
@@ -332,27 +332,27 @@ action[Q32, identificador] = S63
 action[Q33, parentesis_abierto] = S64
 
 
-action[Q34, operador_suma] = R47
-action[Q34, operador_resta] = R47
-action[Q34, operador_multiplicacion] = R47
-action[Q34, operador_division] = R47
-action[Q34, parentesis_abierto] = R47
-action[Q34, literal_entera] = R47
-action[Q34, identificador] = R47
-action[Q34, pr_if] = R47
-action[Q34, literal_cadena] = R47
-action[Q34, literal_caracter] = R47
-action[Q34, pr_end] = R47
-action[Q34, pr_for] = R47
-action[Q34, instruccion_read] = R47
-action[Q34, literal_booleana] = R47
-action[Q34, instruccion_write] = R47
+action[Q34, operador_suma] = R52
+action[Q34, operador_resta] = R52
+action[Q34, operador_multiplicacion] = R52
+action[Q34, operador_division] = R52
+action[Q34, parentesis_abierto] = R52
+action[Q34, literal_entera] = R52
+action[Q34, identificador] = R52
+action[Q34, pr_if] = R52
+action[Q34, literal_cadena] = R52
+action[Q34, literal_caracter] = R52
+action[Q34, pr_end] = R52
+action[Q34, pr_for] = R52
+action[Q34, instruccion_read] = R52
+action[Q34, literal_booleana] = R52
+action[Q34, instruccion_write] = R52
 
 
 action[Q35, parentesis_abierto] = S65
 
 
-action[Q36, pr_begin] = R11
+action[Q36, pr_begin] = R8
 
 
 action[Q37, tipo] = S66
@@ -370,106 +370,106 @@ action[Q40, parentesis_cerrado] = S68
 
 
 action[Q41, coma] = S69
-action[Q41, parentesis_cerrado] = R8
+action[Q41, parentesis_cerrado] = R12
 
 
-action[Q42, parentesis_cerrado] = R9
+action[Q42, parentesis_cerrado] = R13
 
 
 action[Q43, punto] = S70
 
 
-action[Q44, parentesis_abierto] = R16
-action[Q44, literal_entera] = R16
-action[Q44, identificador] = R16
-action[Q44, pr_if] = R16
-action[Q44, literal_cadena] = R16
-action[Q44, literal_caracter] = R16
-action[Q44, pr_end] = R16
-action[Q44, pr_for] = R16
-action[Q44, instruccion_read] = R16
-action[Q44, literal_booleana] = R16
-action[Q44, instruccion_write] = R16
+action[Q44, parentesis_abierto] = R10
+action[Q44, literal_entera] = R10
+action[Q44, identificador] = R10
+action[Q44, pr_if] = R10
+action[Q44, literal_cadena] = R10
+action[Q44, literal_caracter] = R10
+action[Q44, pr_end] = R10
+action[Q44, pr_for] = R10
+action[Q44, instruccion_read] = R10
+action[Q44, literal_booleana] = R10
+action[Q44, instruccion_write] = R10
 
 
-action[Q45, parentesis_abierto] = S26
-action[Q45, literal_entera] = S27
-action[Q45, identificador] = S72
-action[Q45, literal_cadena] = S30
-action[Q45, literal_caracter] = S31
-action[Q45, literal_booleana] = S34
-goto[Q45, expresion_aritmetica] = 71
-goto[Q45, termino] = 23
-goto[Q45, factor] = 24
+action[Q45, parentesis_abierto] = R26
+action[Q45, literal_entera] = R26
+action[Q45, identificador] = R26
+action[Q45, pr_if] = R26
+action[Q45, literal_cadena] = R26
+action[Q45, literal_caracter] = R26
+action[Q45, pr_end] = R26
+action[Q45, pr_for] = R26
+action[Q45, instruccion_read] = R26
+action[Q45, literal_booleana] = R26
+action[Q45, instruccion_write] = R26
 
 
 action[Q46, parentesis_abierto] = S26
 action[Q46, literal_entera] = S27
-action[Q46, identificador] = S72
+action[Q46, identificador] = S28
+action[Q46, pr_if] = S29
 action[Q46, literal_cadena] = S30
 action[Q46, literal_caracter] = S31
+action[Q46, pr_end] = R5
+action[Q46, pr_for] = S32
+action[Q46, instruccion_read] = S33
 action[Q46, literal_booleana] = S34
-goto[Q46, expresion_aritmetica] = 73
-goto[Q46, termino] = 23
-goto[Q46, factor] = 24
+action[Q46, instruccion_write] = S35
+goto[Q46, cuerpo] = 71
+goto[Q46, lista_de_instrucciones] = 15
+goto[Q46, instruccion] = 16
+goto[Q46, instruccion_asignacion] = 17
+goto[Q46, instruccion_condicional] = 18
+goto[Q46, instruccion_ciclo] = 19
+goto[Q46, instruccion_entrada] = 20
+goto[Q46, instruccion_salida] = 21
+goto[Q46, expresion_aritmetica] = 22
+goto[Q46, instruccion_condicional_simple] = 23
+goto[Q46, termino] = 24
+goto[Q46, factor] = 25
 
 
 action[Q47, parentesis_abierto] = S26
 action[Q47, literal_entera] = S27
-action[Q47, identificador] = S72
+action[Q47, identificador] = S73
 action[Q47, literal_cadena] = S30
 action[Q47, literal_caracter] = S31
 action[Q47, literal_booleana] = S34
-goto[Q47, termino] = 74
-goto[Q47, factor] = 24
+goto[Q47, expresion_aritmetica] = 72
+goto[Q47, termino] = 24
+goto[Q47, factor] = 25
 
 
 action[Q48, parentesis_abierto] = S26
 action[Q48, literal_entera] = S27
-action[Q48, identificador] = S72
+action[Q48, identificador] = S73
 action[Q48, literal_cadena] = S30
 action[Q48, literal_caracter] = S31
 action[Q48, literal_booleana] = S34
-goto[Q48, termino] = 75
-goto[Q48, factor] = 24
+goto[Q48, expresion_aritmetica] = 74
+goto[Q48, termino] = 24
+goto[Q48, factor] = 25
 
 
-action[Q49, parentesis_abierto] = R26
-action[Q49, literal_entera] = R26
-action[Q49, identificador] = R26
-action[Q49, pr_if] = R26
-action[Q49, literal_cadena] = R26
-action[Q49, literal_caracter] = R26
-action[Q49, pr_end] = R26
-action[Q49, pr_for] = R26
-action[Q49, instruccion_read] = R26
-action[Q49, literal_booleana] = R26
-action[Q49, instruccion_write] = R26
+action[Q49, parentesis_abierto] = S26
+action[Q49, literal_entera] = S27
+action[Q49, identificador] = S73
+action[Q49, literal_cadena] = S30
+action[Q49, literal_caracter] = S31
+action[Q49, literal_booleana] = S34
+goto[Q49, termino] = 75
+goto[Q49, factor] = 25
 
 
 action[Q50, parentesis_abierto] = S26
 action[Q50, literal_entera] = S27
-action[Q50, identificador] = S28
-action[Q50, pr_if] = S29
+action[Q50, identificador] = S73
 action[Q50, literal_cadena] = S30
 action[Q50, literal_caracter] = S31
-action[Q50, pr_end] = R5
-action[Q50, pr_for] = S32
-action[Q50, instruccion_read] = S33
 action[Q50, literal_booleana] = S34
-action[Q50, instruccion_write] = S35
-goto[Q50, cuerpo] = 76
-goto[Q50, lista_de_instrucciones] = 15
-goto[Q50, instruccion] = 16
-goto[Q50, instruccion_asignacion] = 17
-goto[Q50, instruccion_condicional] = 18
-goto[Q50, instruccion_ciclo] = 19
-goto[Q50, instruccion_entrada] = 20
-goto[Q50, instruccion_salida] = 21
-goto[Q50, expresion_aritmetica] = 22
-goto[Q50, termino] = 23
-goto[Q50, factor] = 24
-goto[Q50, instruccion_condicional_simple] = 25
+goto[Q50, termino] = 76
+goto[Q50, factor] = 25
 
 
 action[Q51, parentesis_cerrado] = S77
@@ -480,11 +480,11 @@ action[Q52, operador_resta] = S79
 action[Q52, parentesis_cerrado] = R32
 
 
-action[Q53, operador_suma] = R44
-action[Q53, operador_resta] = R44
+action[Q53, operador_suma] = R46
+action[Q53, operador_resta] = R46
 action[Q53, operador_multiplicacion] = S80
 action[Q53, operador_division] = S81
-action[Q53, parentesis_cerrado] = R44
+action[Q53, parentesis_cerrado] = R46
 
 
 action[Q54, parentesis_abierto] = S54
@@ -498,39 +498,39 @@ goto[Q54, termino] = 52
 goto[Q54, factor] = 53
 
 
-action[Q55, operador_suma] = R46
-action[Q55, operador_resta] = R46
-action[Q55, operador_multiplicacion] = R46
-action[Q55, operador_division] = R46
-action[Q55, parentesis_cerrado] = R46
+action[Q55, operador_suma] = R51
+action[Q55, operador_resta] = R51
+action[Q55, operador_multiplicacion] = R51
+action[Q55, operador_division] = R51
+action[Q55, parentesis_cerrado] = R51
 
 
-action[Q56, operador_suma] = R45
-action[Q56, operador_resta] = R45
-action[Q56, operador_multiplicacion] = R45
-action[Q56, operador_division] = R45
-action[Q56, parentesis_cerrado] = R45
+action[Q56, operador_suma] = R50
+action[Q56, operador_resta] = R50
+action[Q56, operador_multiplicacion] = R50
+action[Q56, operador_division] = R50
+action[Q56, parentesis_cerrado] = R50
 
 
-action[Q57, operador_suma] = R48
-action[Q57, operador_resta] = R48
-action[Q57, operador_multiplicacion] = R48
-action[Q57, operador_division] = R48
-action[Q57, parentesis_cerrado] = R48
+action[Q57, operador_suma] = R53
+action[Q57, operador_resta] = R53
+action[Q57, operador_multiplicacion] = R53
+action[Q57, operador_division] = R53
+action[Q57, parentesis_cerrado] = R53
 
 
-action[Q58, operador_suma] = R49
-action[Q58, operador_resta] = R49
-action[Q58, operador_multiplicacion] = R49
-action[Q58, operador_division] = R49
-action[Q58, parentesis_cerrado] = R49
+action[Q58, operador_suma] = R54
+action[Q58, operador_resta] = R54
+action[Q58, operador_multiplicacion] = R54
+action[Q58, operador_division] = R54
+action[Q58, parentesis_cerrado] = R54
 
 
-action[Q59, operador_suma] = R47
-action[Q59, operador_resta] = R47
-action[Q59, operador_multiplicacion] = R47
-action[Q59, operador_division] = R47
-action[Q59, parentesis_cerrado] = R47
+action[Q59, operador_suma] = R52
+action[Q59, operador_resta] = R52
+action[Q59, operador_multiplicacion] = R52
+action[Q59, operador_division] = R52
+action[Q59, parentesis_cerrado] = R52
 
 
 action[Q60, parentesis_abierto] = S87
@@ -554,7 +554,7 @@ action[Q62, operador_relacional] = S94
 action[Q63, operador_asignacion] = S95
 
 
-action[Q64, coma] = R36
+action[Q64, coma] = R49
 action[Q64, identificador] = S99
 action[Q64, literal_cadena] = S100
 goto[Q64, lista_de_identificadores] = 96
@@ -570,7 +570,7 @@ goto[Q65, literales_de_cadena_o_identificadores] = 101
 action[Q66, punto_y_coma] = S104
 
 
-action[Q67, dos_puntos] = R14
+action[Q67, dos_puntos] = R22
 
 
 action[Q68, punto_y_coma] = R6
@@ -582,97 +582,97 @@ action[Q69, pr_output] = S105
 action[Q70, $] = R0
 
 
-action[Q71, parentesis_abierto] = R30
-action[Q71, literal_entera] = R30
-action[Q71, identificador] = R30
-action[Q71, pr_if] = R30
-action[Q71, literal_cadena] = R30
-action[Q71, literal_caracter] = R30
-action[Q71, pr_end] = R30
-action[Q71, pr_for] = R30
-action[Q71, instruccion_read] = R30
-action[Q71, literal_booleana] = R30
-action[Q71, instruccion_write] = R30
+action[Q71, pr_end] = S106
 
 
-action[Q72, operador_suma] = R45
-action[Q72, operador_resta] = R45
-action[Q72, operador_multiplicacion] = R45
-action[Q72, operador_division] = R45
-action[Q72, parentesis_abierto] = R45
-action[Q72, literal_entera] = R45
-action[Q72, identificador] = R45
-action[Q72, pr_if] = R45
-action[Q72, literal_cadena] = R45
-action[Q72, literal_caracter] = R45
-action[Q72, pr_end] = R45
-action[Q72, pr_for] = R45
-action[Q72, instruccion_read] = R45
-action[Q72, literal_booleana] = R45
-action[Q72, instruccion_write] = R45
+action[Q72, parentesis_abierto] = R30
+action[Q72, literal_entera] = R30
+action[Q72, identificador] = R30
+action[Q72, pr_if] = R30
+action[Q72, literal_cadena] = R30
+action[Q72, literal_caracter] = R30
+action[Q72, pr_end] = R30
+action[Q72, pr_for] = R30
+action[Q72, instruccion_read] = R30
+action[Q72, literal_booleana] = R30
+action[Q72, instruccion_write] = R30
 
 
-action[Q73, parentesis_abierto] = R31
-action[Q73, literal_entera] = R31
-action[Q73, identificador] = R31
-action[Q73, pr_if] = R31
-action[Q73, literal_cadena] = R31
-action[Q73, literal_caracter] = R31
-action[Q73, pr_end] = R31
-action[Q73, pr_for] = R31
-action[Q73, instruccion_read] = R31
-action[Q73, literal_booleana] = R31
-action[Q73, instruccion_write] = R31
+action[Q73, operador_suma] = R50
+action[Q73, operador_resta] = R50
+action[Q73, operador_multiplicacion] = R50
+action[Q73, operador_division] = R50
+action[Q73, parentesis_abierto] = R50
+action[Q73, literal_entera] = R50
+action[Q73, identificador] = R50
+action[Q73, pr_if] = R50
+action[Q73, literal_cadena] = R50
+action[Q73, literal_caracter] = R50
+action[Q73, pr_end] = R50
+action[Q73, pr_for] = R50
+action[Q73, instruccion_read] = R50
+action[Q73, literal_booleana] = R50
+action[Q73, instruccion_write] = R50
 
 
-action[Q74, operador_suma] = R42
-action[Q74, operador_resta] = R42
-action[Q74, parentesis_abierto] = R42
-action[Q74, literal_entera] = R42
-action[Q74, identificador] = R42
-action[Q74, pr_if] = R42
-action[Q74, literal_cadena] = R42
-action[Q74, literal_caracter] = R42
-action[Q74, pr_end] = R42
-action[Q74, pr_for] = R42
-action[Q74, instruccion_read] = R42
-action[Q74, literal_booleana] = R42
-action[Q74, instruccion_write] = R42
+action[Q74, parentesis_abierto] = R31
+action[Q74, literal_entera] = R31
+action[Q74, identificador] = R31
+action[Q74, pr_if] = R31
+action[Q74, literal_cadena] = R31
+action[Q74, literal_caracter] = R31
+action[Q74, pr_end] = R31
+action[Q74, pr_for] = R31
+action[Q74, instruccion_read] = R31
+action[Q74, literal_booleana] = R31
+action[Q74, instruccion_write] = R31
 
 
-action[Q75, operador_suma] = R43
-action[Q75, operador_resta] = R43
-action[Q75, parentesis_abierto] = R43
-action[Q75, literal_entera] = R43
-action[Q75, identificador] = R43
-action[Q75, pr_if] = R43
-action[Q75, literal_cadena] = R43
-action[Q75, literal_caracter] = R43
-action[Q75, pr_end] = R43
-action[Q75, pr_for] = R43
-action[Q75, instruccion_read] = R43
-action[Q75, literal_booleana] = R43
-action[Q75, instruccion_write] = R43
+action[Q75, operador_suma] = R44
+action[Q75, operador_resta] = R44
+action[Q75, parentesis_abierto] = R44
+action[Q75, literal_entera] = R44
+action[Q75, identificador] = R44
+action[Q75, pr_if] = R44
+action[Q75, literal_cadena] = R44
+action[Q75, literal_caracter] = R44
+action[Q75, pr_end] = R44
+action[Q75, pr_for] = R44
+action[Q75, instruccion_read] = R44
+action[Q75, literal_booleana] = R44
+action[Q75, instruccion_write] = R44
 
 
-action[Q76, pr_end] = S106
+action[Q76, operador_suma] = R45
+action[Q76, operador_resta] = R45
+action[Q76, parentesis_abierto] = R45
+action[Q76, literal_entera] = R45
+action[Q76, identificador] = R45
+action[Q76, pr_if] = R45
+action[Q76, literal_cadena] = R45
+action[Q76, literal_caracter] = R45
+action[Q76, pr_end] = R45
+action[Q76, pr_for] = R45
+action[Q76, instruccion_read] = R45
+action[Q76, literal_booleana] = R45
+action[Q76, instruccion_write] = R45
 
 
-action[Q77, operador_suma] = R50
-action[Q77, operador_resta] = R50
-action[Q77, operador_multiplicacion] = R50
-action[Q77, operador_division] = R50
-action[Q77, parentesis_abierto] = R50
-action[Q77, literal_entera] = R50
-action[Q77, identificador] = R50
-action[Q77, pr_if] = R50
-action[Q77, literal_cadena] = R50
-action[Q77, literal_caracter] = R50
-action[Q77, pr_end] = R50
-action[Q77, pr_for] = R50
-action[Q77, instruccion_read] = R50
-action[Q77, literal_booleana] = R50
-action[Q77, instruccion_write] = R50
+action[Q77, operador_suma] = R55
+action[Q77, operador_resta] = R55
+action[Q77, operador_multiplicacion] = R55
+action[Q77, operador_division] = R55
+action[Q77, parentesis_abierto] = R55
+action[Q77, literal_entera] = R55
+action[Q77, identificador] = R55
+action[Q77, pr_if] = R55
+action[Q77, literal_cadena] = R55
+action[Q77, literal_caracter] = R55
+action[Q77, pr_end] = R55
+action[Q77, pr_for] = R55
+action[Q77, instruccion_read] = R55
+action[Q77, literal_booleana] = R55
+action[Q77, instruccion_write] = R55
 
 
 action[Q78, parentesis_abierto] = S54
@@ -720,7 +720,7 @@ goto[Q81, factor] = 53
 action[Q82, parentesis_cerrado] = S111
 
 
-action[Q83, punto_y_coma] = R41
+action[Q83, punto_y_coma] = R33
 
 
 action[Q84, punto_y_coma] = S112
@@ -731,9 +731,9 @@ action[Q85, operador_suma] = S113
 action[Q85, operador_resta] = S114
 
 
-action[Q86, punto_y_coma] = R44
-action[Q86, operador_suma] = R44
-action[Q86, operador_resta] = R44
+action[Q86, punto_y_coma] = R46
+action[Q86, operador_suma] = R46
+action[Q86, operador_resta] = R46
 action[Q86, operador_multiplicacion] = S115
 action[Q86, operador_division] = S116
 
@@ -749,39 +749,39 @@ goto[Q87, termino] = 52
 goto[Q87, factor] = 53
 
 
-action[Q88, punto_y_coma] = R46
-action[Q88, operador_suma] = R46
-action[Q88, operador_resta] = R46
-action[Q88, operador_multiplicacion] = R46
-action[Q88, operador_division] = R46
+action[Q88, punto_y_coma] = R51
+action[Q88, operador_suma] = R51
+action[Q88, operador_resta] = R51
+action[Q88, operador_multiplicacion] = R51
+action[Q88, operador_division] = R51
 
 
-action[Q89, punto_y_coma] = R45
-action[Q89, operador_suma] = R45
-action[Q89, operador_resta] = R45
-action[Q89, operador_multiplicacion] = R45
-action[Q89, operador_division] = R45
+action[Q89, punto_y_coma] = R50
+action[Q89, operador_suma] = R50
+action[Q89, operador_resta] = R50
+action[Q89, operador_multiplicacion] = R50
+action[Q89, operador_division] = R50
 
 
-action[Q90, punto_y_coma] = R48
-action[Q90, operador_suma] = R48
-action[Q90, operador_resta] = R48
-action[Q90, operador_multiplicacion] = R48
-action[Q90, operador_division] = R48
+action[Q90, punto_y_coma] = R53
+action[Q90, operador_suma] = R53
+action[Q90, operador_resta] = R53
+action[Q90, operador_multiplicacion] = R53
+action[Q90, operador_division] = R53
 
 
-action[Q91, punto_y_coma] = R49
-action[Q91, operador_suma] = R49
-action[Q91, operador_resta] = R49
-action[Q91, operador_multiplicacion] = R49
-action[Q91, operador_division] = R49
+action[Q91, punto_y_coma] = R54
+action[Q91, operador_suma] = R54
+action[Q91, operador_resta] = R54
+action[Q91, operador_multiplicacion] = R54
+action[Q91, operador_division] = R54
 
 
-action[Q92, punto_y_coma] = R47
-action[Q92, operador_suma] = R47
-action[Q92, operador_resta] = R47
-action[Q92, operador_multiplicacion] = R47
-action[Q92, operador_division] = R47
+action[Q92, punto_y_coma] = R52
+action[Q92, operador_suma] = R52
+action[Q92, operador_resta] = R52
+action[Q92, operador_multiplicacion] = R52
+action[Q92, operador_division] = R52
 
 
 action[Q93, parentesis_abierto] = S26
@@ -804,9 +804,9 @@ goto[Q93, instruccion_ciclo] = 19
 goto[Q93, instruccion_entrada] = 20
 goto[Q93, instruccion_salida] = 21
 goto[Q93, expresion_aritmetica] = 22
-goto[Q93, termino] = 23
-goto[Q93, factor] = 24
-goto[Q93, instruccion_condicional_simple] = 25
+goto[Q93, instruccion_condicional_simple] = 23
+goto[Q93, termino] = 24
+goto[Q93, factor] = 25
 
 
 action[Q94, parentesis_abierto] = S123
@@ -826,7 +826,7 @@ action[Q95, identificador] = S131
 goto[Q95, fin_de_ciclo] = 129
 
 
-action[Q96, parentesis_cerrado] = R34
+action[Q96, parentesis_cerrado] = R39
 
 
 action[Q97, parentesis_cerrado] = S132
@@ -836,28 +836,28 @@ action[Q98, coma] = S133
 
 
 action[Q99, coma] = S134
-action[Q99, parentesis_cerrado] = R15
+action[Q99, parentesis_cerrado] = R23
 
 
-action[Q100, coma] = R35
+action[Q100, coma] = R48
 
 
 action[Q101, parentesis_cerrado] = S135
 
 
 action[Q102, coma] = S136
-action[Q102, parentesis_cerrado] = R39
+action[Q102, parentesis_cerrado] = R42
 
 
 action[Q103, coma] = S137
-action[Q103, parentesis_cerrado] = R40
+action[Q103, parentesis_cerrado] = R43
 
 
-action[Q104, identificador] = R13
-action[Q104, pr_begin] = R13
+action[Q104, identificador] = R15
+action[Q104, pr_begin] = R15
 
 
-action[Q105, parentesis_cerrado] = R10
+action[Q105, parentesis_cerrado] = R14
 
 
 action[Q106, punto_y_coma] = S138
@@ -869,21 +869,21 @@ action[Q107, parentesis_cerrado] = R30
 action[Q108, parentesis_cerrado] = R31
 
 
-action[Q109, operador_suma] = R42
-action[Q109, operador_resta] = R42
-action[Q109, parentesis_cerrado] = R42
+action[Q109, operador_suma] = R44
+action[Q109, operador_resta] = R44
+action[Q109, parentesis_cerrado] = R44
 
 
-action[Q110, operador_suma] = R43
-action[Q110, operador_resta] = R43
-action[Q110, parentesis_cerrado] = R43
+action[Q110, operador_suma] = R45
+action[Q110, operador_resta] = R45
+action[Q110, parentesis_cerrado] = R45
 
 
-action[Q111, operador_suma] = R50
-action[Q111, operador_resta] = R50
-action[Q111, operador_multiplicacion] = R50
-action[Q111, operador_division] = R50
-action[Q111, parentesis_cerrado] = R50
+action[Q111, operador_suma] = R55
+action[Q111, operador_resta] = R55
+action[Q111, operador_multiplicacion] = R55
+action[Q111, operador_division] = R55
+action[Q111, parentesis_cerrado] = R55
 
 
 action[Q112, parentesis_abierto] = R24
@@ -947,10 +947,10 @@ action[Q117, parentesis_cerrado] = S143
 action[Q118, pr_end] = S144
 
 
-action[Q119, pr_then] = R41
+action[Q119, pr_then] = R33
 
 
-action[Q120, pr_then] = R53
+action[Q120, pr_then] = R47
 
 
 action[Q121, operador_suma] = S145
@@ -958,11 +958,11 @@ action[Q121, operador_resta] = S146
 action[Q121, pr_then] = R32
 
 
-action[Q122, operador_suma] = R44
-action[Q122, operador_resta] = R44
+action[Q122, operador_suma] = R46
+action[Q122, operador_resta] = R46
 action[Q122, operador_multiplicacion] = S147
 action[Q122, operador_division] = S148
-action[Q122, pr_then] = R44
+action[Q122, pr_then] = R46
 
 
 action[Q123, parentesis_abierto] = S54
@@ -976,48 +976,48 @@ goto[Q123, termino] = 52
 goto[Q123, factor] = 53
 
 
-action[Q124, operador_suma] = R46
-action[Q124, operador_resta] = R46
-action[Q124, operador_multiplicacion] = R46
-action[Q124, operador_division] = R46
-action[Q124, pr_then] = R46
+action[Q124, operador_suma] = R51
+action[Q124, operador_resta] = R51
+action[Q124, operador_multiplicacion] = R51
+action[Q124, operador_division] = R51
+action[Q124, pr_then] = R51
 
 
-action[Q125, operador_suma] = R45
-action[Q125, operador_resta] = R45
-action[Q125, operador_multiplicacion] = R45
-action[Q125, operador_division] = R45
-action[Q125, pr_then] = R45
+action[Q125, operador_suma] = R50
+action[Q125, operador_resta] = R50
+action[Q125, operador_multiplicacion] = R50
+action[Q125, operador_division] = R50
+action[Q125, pr_then] = R50
 
 
-action[Q126, operador_suma] = R48
-action[Q126, operador_resta] = R48
-action[Q126, operador_multiplicacion] = R48
-action[Q126, operador_division] = R48
-action[Q126, pr_then] = R48
+action[Q126, operador_suma] = R53
+action[Q126, operador_resta] = R53
+action[Q126, operador_multiplicacion] = R53
+action[Q126, operador_division] = R53
+action[Q126, pr_then] = R53
 
 
-action[Q127, operador_suma] = R49
-action[Q127, operador_resta] = R49
-action[Q127, operador_multiplicacion] = R49
-action[Q127, operador_division] = R49
-action[Q127, pr_then] = R49
+action[Q127, operador_suma] = R54
+action[Q127, operador_resta] = R54
+action[Q127, operador_multiplicacion] = R54
+action[Q127, operador_division] = R54
+action[Q127, pr_then] = R54
 
 
-action[Q128, operador_suma] = R47
-action[Q128, operador_resta] = R47
-action[Q128, operador_multiplicacion] = R47
-action[Q128, operador_division] = R47
-action[Q128, pr_then] = R47
+action[Q128, operador_suma] = R52
+action[Q128, operador_resta] = R52
+action[Q128, operador_multiplicacion] = R52
+action[Q128, operador_division] = R52
+action[Q128, pr_then] = R52
 
 
 action[Q129, pr_to] = S150
 
 
-action[Q130, pr_to] = R55
+action[Q130, pr_to] = R37
 
 
-action[Q131, pr_to] = R54
+action[Q131, pr_to] = R36
 
 
 action[Q132, punto_y_coma] = S151
@@ -1044,17 +1044,17 @@ action[Q137, literal_cadena] = S103
 goto[Q137, literales_de_cadena_o_identificadores] = 156
 
 
-action[Q138, parentesis_abierto] = R52
-action[Q138, literal_entera] = R52
-action[Q138, identificador] = R52
-action[Q138, pr_if] = R52
-action[Q138, literal_cadena] = R52
-action[Q138, literal_caracter] = R52
-action[Q138, pr_end] = R52
-action[Q138, pr_for] = R52
-action[Q138, instruccion_read] = R52
-action[Q138, literal_booleana] = R52
-action[Q138, instruccion_write] = R52
+action[Q138, parentesis_abierto] = R35
+action[Q138, literal_entera] = R35
+action[Q138, identificador] = R35
+action[Q138, pr_if] = R35
+action[Q138, literal_cadena] = R35
+action[Q138, literal_caracter] = R35
+action[Q138, pr_end] = R35
+action[Q138, pr_for] = R35
+action[Q138, instruccion_read] = R35
+action[Q138, literal_booleana] = R35
+action[Q138, instruccion_write] = R35
 
 
 action[Q139, punto_y_coma] = R30
@@ -1063,21 +1063,21 @@ action[Q139, punto_y_coma] = R30
 action[Q140, punto_y_coma] = R31
 
 
-action[Q141, punto_y_coma] = R42
-action[Q141, operador_suma] = R42
-action[Q141, operador_resta] = R42
+action[Q141, punto_y_coma] = R44
+action[Q141, operador_suma] = R44
+action[Q141, operador_resta] = R44
 
 
-action[Q142, punto_y_coma] = R43
-action[Q142, operador_suma] = R43
-action[Q142, operador_resta] = R43
+action[Q142, punto_y_coma] = R45
+action[Q142, operador_suma] = R45
+action[Q142, operador_resta] = R45
 
 
-action[Q143, punto_y_coma] = R50
-action[Q143, operador_suma] = R50
-action[Q143, operador_resta] = R50
-action[Q143, operador_multiplicacion] = R50
-action[Q143, operador_division] = R50
+action[Q143, punto_y_coma] = R55
+action[Q143, operador_suma] = R55
+action[Q143, operador_resta] = R55
+action[Q143, operador_multiplicacion] = R55
+action[Q143, operador_division] = R55
 
 
 action[Q144, punto_y_coma] = S157
@@ -1146,10 +1146,10 @@ action[Q151, literal_booleana] = R28
 action[Q151, instruccion_write] = R28
 
 
-action[Q152, parentesis_cerrado] = R33
+action[Q152, parentesis_cerrado] = R38
 
 
-action[Q153, parentesis_cerrado] = R14
+action[Q153, parentesis_cerrado] = R22
 
 
 action[Q154, parentesis_abierto] = R29
@@ -1165,24 +1165,24 @@ action[Q154, literal_booleana] = R29
 action[Q154, instruccion_write] = R29
 
 
-action[Q155, parentesis_cerrado] = R38
+action[Q155, parentesis_cerrado] = R41
 
 
-action[Q156, parentesis_cerrado] = R37
+action[Q156, parentesis_cerrado] = R40
 
 
-action[Q157, parentesis_abierto] = R51
-action[Q157, literal_entera] = R51
-action[Q157, identificador] = R51
-action[Q157, pr_if] = R51
-action[Q157, literal_cadena] = R51
-action[Q157, literal_caracter] = R51
-action[Q157, pr_end] = R51
-action[Q157, pr_for] = R51
-action[Q157, instruccion_read] = R51
-action[Q157, pr_else] = R51
-action[Q157, literal_booleana] = R51
-action[Q157, instruccion_write] = R51
+action[Q157, parentesis_abierto] = R34
+action[Q157, literal_entera] = R34
+action[Q157, identificador] = R34
+action[Q157, pr_if] = R34
+action[Q157, literal_cadena] = R34
+action[Q157, literal_caracter] = R34
+action[Q157, pr_end] = R34
+action[Q157, pr_for] = R34
+action[Q157, instruccion_read] = R34
+action[Q157, pr_else] = R34
+action[Q157, literal_booleana] = R34
+action[Q157, instruccion_write] = R34
 
 
 action[Q158, pr_then] = R30
@@ -1191,30 +1191,30 @@ action[Q158, pr_then] = R30
 action[Q159, pr_then] = R31
 
 
-action[Q160, operador_suma] = R42
-action[Q160, operador_resta] = R42
-action[Q160, pr_then] = R42
+action[Q160, operador_suma] = R44
+action[Q160, operador_resta] = R44
+action[Q160, pr_then] = R44
 
 
-action[Q161, operador_suma] = R43
-action[Q161, operador_resta] = R43
-action[Q161, pr_then] = R43
+action[Q161, operador_suma] = R45
+action[Q161, operador_resta] = R45
+action[Q161, pr_then] = R45
 
 
-action[Q162, operador_suma] = R50
-action[Q162, operador_resta] = R50
-action[Q162, operador_multiplicacion] = R50
-action[Q162, operador_division] = R50
-action[Q162, pr_then] = R50
+action[Q162, operador_suma] = R55
+action[Q162, operador_resta] = R55
+action[Q162, operador_multiplicacion] = R55
+action[Q162, operador_division] = R55
+action[Q162, pr_then] = R55
 
 
 action[Q163, pr_do] = S166
 
 
-action[Q164, pr_do] = R55
+action[Q164, pr_do] = R37
 
 
-action[Q165, pr_do] = R54
+action[Q165, pr_do] = R36
 
 
 action[Q166, pr_begin] = S167
@@ -1240,9 +1240,9 @@ goto[Q167, instruccion_ciclo] = 19
 goto[Q167, instruccion_entrada] = 20
 goto[Q167, instruccion_salida] = 21
 goto[Q167, expresion_aritmetica] = 22
-goto[Q167, termino] = 23
-goto[Q167, factor] = 24
-goto[Q167, instruccion_condicional_simple] = 25
+goto[Q167, instruccion_condicional_simple] = 23
+goto[Q167, termino] = 24
+goto[Q167, factor] = 25
 
 
 action[Q168, pr_end] = S169

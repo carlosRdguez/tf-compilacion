@@ -1,27 +1,26 @@
 %{
     #include <cstring>
 	typedef enum {
-        PALABRA_RESERVADA,
+        PALABRA_RESERVADA, TIPO,
         PUNTO, DOS_PUNTOS, PUNTO_Y_COMA, COMA, PARENTESIS,
         OPERACION_ARITMETICA, OPERACION_RELACIONAL,
         INSTRUCCION_READ, INSTRUCCION_WRITE,
-        LITERAL_ENTERA, LITERAL_BOOLEANA, LITERAL_CADENA,
+        LITERAL_ENTERA, LITERAL_BOOLEANA, LITERAL_CARACTER, LITERAL_CADENA,
         IDENTIFICADOR,
         SALTO_DE_LINEA, PESO,
 	} Terminal;
 
-    char yyreservada[20];
-    int yylinea = 1;
+    char LEX_nombreToken[20];
+    int LEX_lineaActual = 1;
 
 %}
 
 %option noyywrap
 
 /* regular definitions */
-separador		[ \t]
+separador [\t ]
 separador_de_tokens {separador}+
 salto_de_linea \n
-digito [0-9]
 punto \.
 dos_puntos \:
 punto_y_coma \;
@@ -31,84 +30,66 @@ operador_suma \+
 operador_resta \-
 operador_multiplicacion \*
 operador_division \/
-operador_igualdad \=
-operador_diferente \<\>
-operador_menor \<
-operador_menor_o_igual \<\=
-operador_mayor \>
-operador_mayor_o_igual \>\=
-parentesis {parentesis_abierto}|{parentesis_cerrado}
 parentesis_abierto \(
 parentesis_cerrado \)
-instruccion_read (r)|(R)ead(Ln|ln)?
-instruccion_write (w)|(W)rite(Ln|ln)?
-literal_entera {digito}+
-literal_booleana true|false
-literal_caracter [A-Za-z]
-palabra ({digito}|{literal_caracter}|\¿|\?|\!|\¡|{parentesis}|{coma}|{dos_puntos})*
-literal_cadena \"{palabra}(\ {palabra})*\"
-identificador ({literal_caracter}|\_)(({literal_caracter}|\_)|{digito})*
+operador_relacional \=|\<\>|\<|\>|\<\=|\>\=
+literal_entera 0|[1-9][0-9]*
+literal_caracter \'[A-Za-z]\'
+identificador ([A-Za-z]|\_)(([A-Za-z]|\_)|[0-9])*
+literal_booleana (true)|(false)
+literal_cadena \"([A-Za-z]|\ )*\"
+tipo (integer)|(bool)|(string)|(char)
 
 
 
 %%
 
 {separador_de_tokens} {}
-{salto_de_linea} {yylinea++; return(SALTO_DE_LINEA);}
+{salto_de_linea} {strcpy(LEX_nombreToken, "\n"); LEX_lineaActual++; return(SALTO_DE_LINEA);}
 
 
-program {strcpy(yyreservada, "PROGRAM"); return(PALABRA_RESERVADA);}
-input {strcpy(yyreservada, "INPUT"); return(PALABRA_RESERVADA);}
-output {strcpy(yyreservada, "OUTPUT"); return(PALABRA_RESERVADA);}
-begin {strcpy(yyreservada, "BEGIN"); return(PALABRA_RESERVADA);}
-end {strcpy(yyreservada, "END"); return(PALABRA_RESERVADA);}
-var {strcpy(yyreservada, "VAR"); return(PALABRA_RESERVADA);}
-integer {strcpy(yyreservada, "INTEGER"); return(PALABRA_RESERVADA);}
-bool {strcpy(yyreservada, "BOOL"); return(PALABRA_RESERVADA);}
-string {strcpy(yyreservada, "STRING"); return(PALABRA_RESERVADA);}
-if {strcpy(yyreservada, "IF"); return(PALABRA_RESERVADA);}
-then {strcpy(yyreservada, "THEN"); return(PALABRA_RESERVADA);}
-else {strcpy(yyreservada, "ELSE"); return(PALABRA_RESERVADA);}
-for {strcpy(yyreservada, "FOR"); return(PALABRA_RESERVADA);}
-to {strcpy(yyreservada, "TO"); return(PALABRA_RESERVADA);}
-do {strcpy(yyreservada, "DO"); return(PALABRA_RESERVADA);}
+program {strcpy(LEX_nombreToken, "pr_program"); return(PALABRA_RESERVADA);}
+begin {strcpy(LEX_nombreToken, "pr_begin"); return(PALABRA_RESERVADA);}
+input {strcpy(LEX_nombreToken, "pr_input"); return(PALABRA_RESERVADA);}
+output {strcpy(LEX_nombreToken, "pr_output"); return(PALABRA_RESERVADA);}
+end {strcpy(LEX_nombreToken, "pr_end"); return(PALABRA_RESERVADA);}
+if {strcpy(LEX_nombreToken, "pr_if"); return(PALABRA_RESERVADA);}
+then {strcpy(LEX_nombreToken, "pr_then"); return(PALABRA_RESERVADA);}
+else {strcpy(LEX_nombreToken, "pr_else"); return(PALABRA_RESERVADA);}
+var {strcpy(LEX_nombreToken, "pr_var"); return(PALABRA_RESERVADA);}
+for {strcpy(LEX_nombreToken, "pr_for"); return(PALABRA_RESERVADA);}
+to {strcpy(LEX_nombreToken, "pr_to"); return(PALABRA_RESERVADA);}
+do {strcpy(LEX_nombreToken, "pr_do"); return(PALABRA_RESERVADA);}
+Read {strcpy(LEX_nombreToken, "instruccion_read"); return(PALABRA_RESERVADA);}
+Write {strcpy(LEX_nombreToken, "instruccion_write"); return(PALABRA_RESERVADA);}
 
 
-{punto} {return(PUNTO);}
-{dos_puntos} {return(DOS_PUNTOS);}
-{punto_y_coma} {return(PUNTO_Y_COMA);}
-{coma} {return(COMA);}
+{punto} {strcpy(LEX_nombreToken, "punto"); return(PUNTO);}
+{dos_puntos} {strcpy(LEX_nombreToken, "dos_puntos"); return(DOS_PUNTOS);}
+{punto_y_coma} {strcpy(LEX_nombreToken, "punto_y_coma"); return(PUNTO_Y_COMA);}
+{coma} {strcpy(LEX_nombreToken, "coma"); return(COMA);}
 
 
-{operador_asignacion} {return(OPERACION_ARITMETICA);}
-{operador_suma} {return(OPERACION_ARITMETICA);}
-{operador_resta} {return(OPERACION_ARITMETICA);}
-{operador_multiplicacion} {return(OPERACION_ARITMETICA);}
-{operador_division} {return(OPERACION_ARITMETICA);}
-{operador_igualdad} {return(OPERACION_RELACIONAL);}
-{operador_diferente} {return(OPERACION_RELACIONAL);}
-{operador_menor} {return(OPERACION_RELACIONAL);}
-{operador_menor_o_igual} {return(OPERACION_RELACIONAL);}
-{operador_mayor} {return(OPERACION_RELACIONAL);}
-{operador_mayor_o_igual} {return(OPERACION_RELACIONAL);}
+{operador_asignacion} {strcpy(LEX_nombreToken, "operador_asignacion"); return(OPERACION_ARITMETICA);}
+{operador_suma} {strcpy(LEX_nombreToken, "operador_suma"); return(OPERACION_ARITMETICA);}
+{operador_resta} {strcpy(LEX_nombreToken, "operador_resta"); return(OPERACION_ARITMETICA);}
+{operador_multiplicacion} {strcpy(LEX_nombreToken, "operador_multiplicacion"); return(OPERACION_ARITMETICA);}
+{operador_division} {strcpy(LEX_nombreToken, "operador_division"); return(OPERACION_ARITMETICA);}
+{parentesis_abierto} {strcpy(LEX_nombreToken, "parentesis_abierto"); return(PARENTESIS);}
+{parentesis_cerrado} {strcpy(LEX_nombreToken, "parentesis_cerrado"); return(PARENTESIS);}
+{operador_relacional} {strcpy(LEX_nombreToken, "operador_relacional"); return(OPERACION_RELACIONAL);}
 
 
-{parentesis_abierto} {return(PARENTESIS);}
-{parentesis_cerrado} {return(PARENTESIS);}
+{literal_entera} {strcpy(LEX_nombreToken, "literal_entera"); return(LITERAL_ENTERA);}
+{literal_caracter} {strcpy(LEX_nombreToken, "literal_caracter"); return(LITERAL_CARACTER);}
+{literal_booleana} {strcpy(LEX_nombreToken, "literal_booleana"); return(LITERAL_BOOLEANA);}
+{literal_cadena} {strcpy(LEX_nombreToken, "literal_cadena"); return(LITERAL_CADENA);}
 
+{tipo} {strcpy(LEX_nombreToken, "tipo"); return(TIPO);}
 
-{instruccion_read} {return(INSTRUCCION_READ);}
-{instruccion_write} {return(INSTRUCCION_WRITE);}
+{identificador} {strcpy(LEX_nombreToken, "identificador"); return(IDENTIFICADOR);}
 
-
-{literal_booleana} {return(LITERAL_BOOLEANA);}
-{literal_entera} {return(LITERAL_ENTERA);}
-{literal_cadena} {return(LITERAL_CADENA);}
-
-
-{identificador} {return(IDENTIFICADOR);}
-
-<<EOF>>	{return(PESO);}
+<<EOF>>	{strcpy(LEX_nombreToken, "$"); return(PESO);}
 
 
 %%

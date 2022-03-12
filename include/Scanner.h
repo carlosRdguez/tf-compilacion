@@ -19,19 +19,24 @@ typedef enum{
 class Regla{
 public:
     Regla(string _cabecera, string _cuerpo):cabecera(_cabecera), cuerpo(_cuerpo){}
+    Regla(const Regla& _copy):cabecera(_copy.cabecera), cuerpo(_copy.cuerpo){}
     Regla(string _cabecera_y_cuerpo=""){
         if(_cabecera_y_cuerpo != "") {
             cabecera = _cabecera_y_cuerpo.substr(0, 1);
             cuerpo = _cabecera_y_cuerpo.substr(3);
         }
-
     }
     int longitudDelCuerpo() {
         int cantidad_de_espacios = count(cuerpo.begin(), cuerpo.end(), ' ');
+        //cout << cantidad_de_espacios << endl;
         if(cantidad_de_espacios == 0) {
             return cuerpo.size() == 0 ? 0 : 1;
         }
-        return cantidad_de_espacios-1;
+        return cantidad_de_espacios+1;
+    }
+    friend ostream& operator<<(ostream& output, Regla& obj) {
+        cout << obj.cabecera << "->" << obj.cuerpo;
+        return output;
     }
     string cabecera, cuerpo;
 };
@@ -40,7 +45,7 @@ class Accion {
 public:
     Accion() {}
     // accion de tipo reduce
-    Accion(TipoDeAccion _tipo, string _terminal_o_regla):tipo(_tipo), regla(new Regla(_terminal_o_regla)){
+    Accion(TipoDeAccion _tipo, Regla regla):tipo(_tipo), regla(new Regla(regla)){
         assert(_tipo == reduce_A_B);
     }
     // accion de tipo goto o shif
@@ -87,12 +92,13 @@ public:
     bool recognizeSourceCode(char* ruta_archivo_codigo_fuente);
     void obtenerReglas(char* ruta_especificacion_del_lenguaje);
     void createTable(char* ruta_archivo_de_tabla);
-    int getCurrentLine();
+    void imprimirCodigoFuenteTokenizado(char* ruta_archivo_codigo_fuente);
+    int obtenerLineaActual();
     virtual ~Scanner();
 private:
     // mapa[estado, terminal] -> (shift, terminal), (reduce, regla), (accepta, null), (goto, estado)
     map<pair<int, string>, Accion> ACCION;
-    vector<string> reglasSintacticas;
+    vector<Regla> reglasSintacticas;
     stack<int> sintacticStack;
 };
 
