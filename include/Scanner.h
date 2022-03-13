@@ -88,7 +88,7 @@ class Scanner
 {
 public:
     Scanner(string ruta_archivo_tabla, string ruta_especificacion_del_lenguaje);
-    string recognizeSourceCode(string ruta_archivo_codigo_fuente);
+    string recognizeSourceCode(string ruta_archivo_codigo_fuente, bool mostrarReducciones);
     void obtenerReglas(string ruta_especificacion_del_lenguaje);
     string obtenerTerminalEsperado(int estado, string terminal);
     void createTable(string ruta_archivo_de_tabla);

@@ -30,7 +30,7 @@ string Scanner::getNextToken(bool ignorarSaltosDeLinea) {
     return string(LEX_nombreToken);
 }
 
-string Scanner::recognizeSourceCode(string ruta_archivo_codigo_fuente) {
+string Scanner::recognizeSourceCode(string ruta_archivo_codigo_fuente, bool mostrarReducciones) {
     yyin = fopen(ruta_archivo_codigo_fuente.c_str(), "r" );
     vector<Regla> reglasReducidas;
     // primer token reconocido
@@ -76,9 +76,11 @@ string Scanner::recognizeSourceCode(string ruta_archivo_codigo_fuente) {
             // operaciones sobre el parser
         }
         else if(ACCION[indice(s, a)].tipo == accept) {
-             // imprimir reglas reducidas
-             //for(int i = 0; i < reglasReducidas.size(); i++)
-             //   cout << i+1 << " " << reglasReducidas[i] << endl;
+             if(mostrarReducciones) {
+                 // imprimir reglas reducidas
+                 for(size_t i = 0; i < reglasReducidas.size(); i++)
+                    cout << i+1 << " " << reglasReducidas[i] << endl;
+             }
              return string("Reconocimiento exitoso");
             // operaciones sobre el parser
         }

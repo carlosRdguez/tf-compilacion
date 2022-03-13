@@ -37,10 +37,11 @@ _A continuación se muestra un ejemplo de como usar el programa_
    git clone https://github.com/carlosRdguez/tf-compilacion.init
    ```
 2. Para reconocer un programa fuente debe abrir una consola en /bin/Release/ y ejecutar el programa pasándole como parámetros la ruta del programa fuente,
-la ruta del archivo de tabla ACCION generado por Vitral 1.0 y el archivo de especificación de lenguaje creado en Vitral 1.0
+la ruta del archivo de tabla ACCION generado por Vitral 1.0 y el archivo de especificación de lenguaje creado en Vitral 1.0. Puede agregar el parámetro opcional
+-m para mostrar las reducciones realizadas a un programa fuente aceptado
 
    ```sh
-   reconocedorPascal.exe "../../test_program.pas" "../../Vitral/tabla.txt" "../../Vitral/especificacion_lenguaje.elv"
+   reconocedorPascal.exe "../../test_program.pas" "../../Vitral/tabla.txt" "../../Vitral/especificacion_lenguaje.elv" -m
    ```
 4. Si desea visulizar la tokenizacion del programa fuente puede usar el siguiente código
    ```sh
