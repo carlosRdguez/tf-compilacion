@@ -6,7 +6,7 @@ var
 begin
 	Read("introduzca el termino de la sucesion de fibonacci que desea visualizar", n);
 	recurrencia := 1;
-	salida:=1;
+	salida:=q;
 	for i:=0 to n do
 	begin
 		recurrencia := salida;

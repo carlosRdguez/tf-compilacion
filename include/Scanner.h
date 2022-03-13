@@ -87,16 +87,17 @@ public:
 class Scanner
 {
 public:
-    Scanner(char* ruta_archivo_tabla, char* ruta_especificacion_del_lenguaje);
-    string getNextToken();
-    bool recognizeSourceCode(char* ruta_archivo_codigo_fuente);
-    void obtenerReglas(char* ruta_especificacion_del_lenguaje);
-    void createTable(char* ruta_archivo_de_tabla);
-    void imprimirCodigoFuenteTokenizado(char* ruta_archivo_codigo_fuente);
-    int obtenerLineaActual();
+    Scanner(string ruta_archivo_tabla, string ruta_especificacion_del_lenguaje);
+    string recognizeSourceCode(string ruta_archivo_codigo_fuente);
+    void obtenerReglas(string ruta_especificacion_del_lenguaje);
+    string obtenerTerminalEsperado(int estado, string terminal);
+    void createTable(string ruta_archivo_de_tabla);
+    static void imprimirCodigoFuenteTokenizado(string ruta_archivo_codigo_fuente);
     virtual ~Scanner();
 private:
-    // mapa[estado, terminal] -> (shift, terminal), (reduce, regla), (accepta, null), (goto, estado)
+    static int obtenerLineaActual();
+    static string getNextToken(bool ignorarSaltosDeLinea=true);
+    string int_toString(int n);
     map<pair<int, string>, Accion> ACCION;
     vector<Regla> reglasSintacticas;
     stack<int> sintacticStack;

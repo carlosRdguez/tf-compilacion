@@ -2,10 +2,11 @@
 #include "../lex.yy.c"
 #include <iostream>
 #include <fstream>
+#include <sstream>
 
 #define indice(s, a) make_pair(s, a)
 
-Scanner::Scanner(char* ruta_archivo_tabla, char* ruta_especificacion_del_lenguaje) {
+Scanner::Scanner(string ruta_archivo_tabla, string ruta_especificacion_del_lenguaje) {
     // obtener reglas especificadas por Vitral
     obtenerReglas(ruta_especificacion_del_lenguaje);
     //for(int i = 0; i < reglasSintacticas.size(); i++)
@@ -19,18 +20,18 @@ Scanner::Scanner(char* ruta_archivo_tabla, char* ruta_especificacion_del_lenguaj
 
 }
 
-string Scanner::getNextToken() {
+string Scanner::getNextToken(bool ignorarSaltosDeLinea) {
     int token = yylex();
     char* texto_del_token = yytext;
     // ignorar saltos de linea
-    if(string(LEX_nombreToken) == "\n") {
+    if(ignorarSaltosDeLinea && string(LEX_nombreToken) == "\n") {
         return getNextToken();
     }
     return string(LEX_nombreToken);
 }
 
-bool Scanner::recognizeSourceCode(char* ruta_archivo_codigo_fuente) {
-    yyin = fopen(ruta_archivo_codigo_fuente, "r" );
+string Scanner::recognizeSourceCode(string ruta_archivo_codigo_fuente) {
+    yyin = fopen(ruta_archivo_codigo_fuente.c_str(), "r" );
     vector<Regla> reglasReducidas;
     // primer token reconocido
     string a = getNextToken();
@@ -76,21 +77,22 @@ bool Scanner::recognizeSourceCode(char* ruta_archivo_codigo_fuente) {
         }
         else if(ACCION[indice(s, a)].tipo == accept) {
              // imprimir reglas reducidas
-             for(int i = 0; i < reglasReducidas.size(); i++)
-                cout << i+1 << " " << reglasReducidas[i] << endl;
-             return true;
+             //for(int i = 0; i < reglasReducidas.size(); i++)
+             //   cout << i+1 << " " << reglasReducidas[i] << endl;
+             return string("Reconocimiento exitoso");
             // operaciones sobre el parser
         }
         else {
-            return false;
+            // error de reconocimiento, imprimir linea del error y posible causa
+            return string("Error sintactico en linea " + int_toString(LEX_lineaActual) + ": se esperaba " + obtenerTerminalEsperado(s, a));
         }
         s = sintacticStack.top();
     }
-    return true;
+    return string("Error sintactico en linea " + int_toString(LEX_lineaActual));
 }
 
-void Scanner::obtenerReglas(char* ruta_especificacion_del_lenguaje){
-    ifstream archivo_especificacion_lenguaje(ruta_especificacion_del_lenguaje);
+void Scanner::obtenerReglas(string ruta_especificacion_del_lenguaje){
+    ifstream archivo_especificacion_lenguaje(ruta_especificacion_del_lenguaje.c_str());
     string linea;
     bool seccion_reglas_sintacticas = false;
     while(getline(archivo_especificacion_lenguaje, linea)) {
@@ -131,12 +133,46 @@ void Scanner::obtenerReglas(char* ruta_especificacion_del_lenguaje){
     archivo_especificacion_lenguaje.close();
 }
 
+string Scanner::obtenerTerminalEsperado(int estado, string terminal){
+    vector<string> terminalesEsperadosParaReducir;
+    vector<string> terminalesEsperadosParaShift;
+    for(map<pair<int, string>, Accion>::iterator it = ACCION.begin(); it != ACCION.end(); it++) {
+        if(it->first.first == estado && it->second.tipo == reduce_A_B) {
+            terminalesEsperadosParaReducir.push_back(it->first.second);
+        }
+        if(it->first.first == estado && it->second.tipo == shift_t) {
+            terminalesEsperadosParaShift.push_back(it->first.second);
+        }
+    }
+    string cadenaRespuesta;
+    assert(terminalesEsperadosParaReducir.size() > 0 || terminalesEsperadosParaShift.size() > 0);
+    vector<string> terminalesEsperados;
+    if(terminalesEsperadosParaReducir.size() != 0) {
+        terminalesEsperados = terminalesEsperadosParaReducir;
+    }
+    else {
+        terminalesEsperados = terminalesEsperadosParaShift;
+    }
+    for(size_t i = 0; i < terminalesEsperados.size(); i++) {
+        if(i < terminalesEsperados.size()-2 && terminalesEsperados.size() != 1) {
+            cadenaRespuesta += terminalesEsperados[i] + ", ";
+        }
+        else if(i == terminalesEsperados.size()-2) {
+            cadenaRespuesta += terminalesEsperados[i] + " o ";
+        }
+        else {
+            cadenaRespuesta += terminalesEsperados[i];
+        }
+    }
+    return cadenaRespuesta;
+}
+
 int Scanner::obtenerLineaActual() {
     return LEX_lineaActual;
 }
 
-void Scanner::createTable(char* ruta_archivo_de_tabla) {
-    ifstream archivo_tabla(ruta_archivo_de_tabla);
+void Scanner::createTable(string ruta_archivo_de_tabla) {
+    ifstream archivo_tabla(ruta_archivo_de_tabla.c_str());
     string linea;
     while(getline(archivo_tabla, linea)) {
         if(linea.size() != 0) {
@@ -172,10 +208,10 @@ void Scanner::createTable(char* ruta_archivo_de_tabla) {
     archivo_tabla.close();
 }
 
-void Scanner::imprimirCodigoFuenteTokenizado(char* ruta_archivo_codigo_fuente){
-    yyin = fopen(ruta_archivo_codigo_fuente, "r" );
+void Scanner::imprimirCodigoFuenteTokenizado(string ruta_archivo_codigo_fuente){
+    yyin = fopen(ruta_archivo_codigo_fuente.c_str(), "r" );
     cout << "1 ";
-    string token = getNextToken();
+    string token = getNextToken(false);
     transform(token.begin(), token.end(), token.begin(), ::toupper);
     while(token != "$") {
         if(token == "\n") {
@@ -184,7 +220,7 @@ void Scanner::imprimirCodigoFuenteTokenizado(char* ruta_archivo_codigo_fuente){
         else {
             cout << token << " ";
         }
-        token = getNextToken();
+        token = getNextToken(false);
         transform(token.begin(), token.end(), token.begin(), ::toupper);
     }
 
@@ -192,4 +228,12 @@ void Scanner::imprimirCodigoFuenteTokenizado(char* ruta_archivo_codigo_fuente){
 
 Scanner::~Scanner() {
     //dtor
+}
+
+/*Convierte int a string*/
+string Scanner::int_toString(int n) {
+    stringstream temp_str;
+    temp_str << n;
+    char const *converted= temp_str.str().c_str();
+    return string(converted);
 }
