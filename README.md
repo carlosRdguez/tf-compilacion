@@ -41,7 +41,7 @@ la ruta del archivo de tabla ACCION generado por Vitral 1.0 y el archivo de espe
 -m para mostrar las reducciones realizadas a un programa fuente aceptado
 
    ```sh
-   reconocedorPascal.exe "../../test_program.pas" "../../Vitral/tabla.txt" "../../Vitral/especificacion_lenguaje.elv" -m
+   reconocedorPascal.exe "../../test_program.pas" "../../Vitral/tabla.txt" "../../Vitral/especificacion_lenguaje.elv" -s
    ```
 4. Si desea visulizar la tokenizacion del programa fuente puede usar el siguiente código
    ```sh
